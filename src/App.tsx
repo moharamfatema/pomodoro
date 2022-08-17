@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import './App.css'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <header className="header">
+                <img src="https://img.icons8.com/external-tanah-basah-glyph-tanah-basah/96/7d4cdb/external-pomodoro-date-and-time-tanah-basah-glyph-tanah-basah.png" />
+                <h1>Pomodoro</h1>
+            </header>
+            <footer className="footer">
+                <a
+                    target="_blank"
+                    href="https://icons8.com/icon/8WP2o41VRo2f/pomodoro" rel="noreferrer"
+                >
+                    pomodoro icon by Icons8
+                </a>
+            </footer>
+        </div>
+    )
 }
 
-export default App;
+export default App
