@@ -41,7 +41,9 @@ function App() {
 
                 <Display current="session" initial={session} />
                 <button id="reset" type="button" onClick={reset}>
-                    Reset
+                    <span className="material-symbols-outlined">
+                        restart_alt
+                    </span>
                 </button>
             </div>
 

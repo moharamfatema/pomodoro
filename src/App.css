@@ -13,6 +13,7 @@
     flex-direction: column;
     justify-content: space-between;
     min-height: 100vh;
+    align-items: center;
 }
 
 header {
@@ -41,4 +42,43 @@ footer {
 footer a {
     color: var(--brand);
     text-decoration: unset;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--accent-4); /*TODO: find better color*/
+    border-radius: 2vw;
+    max-width: fit-content;
+}
+
+.timers {
+    display: flex;
+    padding: 2vw;
+
+    margin: 1.5vh;
+    min-width: 75vw;
+    justify-content: space-evenly;
+}
+
+.timer {
+    display: flex;
+    flex-direction: column;
+}
+
+.timer-val {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.display {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    background-color: rgba(0, 0, 0, 0);
+    border: 0;
+    color: var(--brand);
 }
