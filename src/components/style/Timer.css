@@ -1,0 +1,11 @@
+.timer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.timer-val {
+    display: flex;
+    justify-content: space-evenly;
+}

@@ -1,20 +1,29 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import './style/Display.css'
 
-const STOPPED = false
-const RUNNING = true
+export const STOPPED = false
+export const RUNNING = true
+
+export const SESSION = true
+export const BREAK = false
 
 export default function Display({
     current,
     initial,
+    status,
+    onZero,
+    reload,
 }: {
-    current: string
+    current: boolean
     initial: number
+    status: boolean
+    onZero: VoidFunction
+    reload: boolean
 }) {
     const [timeLeft, setTimeLeft] = useState(initial * 60)
-    const [status, setStatus] = useState(STOPPED)
 
     const getMinSec: (seconds: number) => string = seconds => {
-        let min: string = `${seconds / 60}`
+        let min: string = `${Math.floor(seconds / 60)}`
         let sec: string = `${seconds % 60}`
 
         if (sec.length === 1) sec = `0${sec}`
@@ -22,20 +31,33 @@ export default function Display({
         return `${min}:${sec}`
     }
 
+    const tick = () => {
+        if (status === RUNNING) {
+            if (timeLeft === 0) {
+                onZero()
+            } else {
+                setTimeLeft(time => time - 1)
+            }
+        }
+    }
+
+    useEffect(() => {
+        if (status === RUNNING) {
+            const interval = setTimeout(tick, 1000)
+            return () => clearTimeout(interval)
+        }
+    }, [status, timeLeft])
+
+    useEffect(() => {
+        setTimeLeft(initial * 60)
+        status = STOPPED
+    }, [initial, reload])
     return (
         <div className="display">
-            <h3 id="timer-label">{current}</h3>
-
-            <h2 id="time-left">{getMinSec(initial * 60)}</h2>
-            <button id="start_stop" type="button">
-                {status === STOPPED ? (
-                    <span className="material-symbols-outlined">
-                        play_arrow
-                    </span>
-                ) : (
-                    <span className="material-symbols-outlined">pause</span>
-                )}
-            </button>
+            <h3 id="timer-label">
+                {current === SESSION ? 'Session' : 'Break'}
+            </h3>
+            <h2 id="time-left">{getMinSec(timeLeft)}</h2>
         </div>
     )
 }

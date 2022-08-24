@@ -1,0 +1,16 @@
+header {
+    text-align: center;
+    font-weight: 700;
+    font-size: 1em;
+    color: var(--brand);
+    background-color: var(--accent-1);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--paper-shadow);
+}
+header img {
+    margin: 0 10px;
+    width: 70px;
+}
