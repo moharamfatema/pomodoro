@@ -23,8 +23,8 @@ export default function Display({
     const [timeLeft, setTimeLeft] = useState(initial * 60)
 
     const getMinSec: (seconds: number) => string = seconds => {
-        let min: string = `${Math.floor(seconds / 60)}`
-        let sec: string = `${seconds % 60}`
+        let min = `${Math.floor(seconds / 60)}`
+        let sec = `${seconds % 60}`
 
         if (sec.length === 1) sec = `0${sec}`
 
