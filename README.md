@@ -1,6 +1,8 @@
 # ![icon](https://img.icons8.com/external-tanah-basah-glyph-tanah-basah/48/7d4cdb/external-pomodoro-date-and-time-tanah-basah-glyph-tanah-basah.png) Pomodoro
 
-A simple calculator **Typescript-React** app, A _FreeCodeCamp_ challenge.
+Get more done and increase your productivity with our Pomodoro Timer web app! Based on the Pomodoro Technique, this timer helps you break down your work into focused 25-minute sessions with 5-minute breaks in between. Improve your focus, eliminate distractions, and boost your productivity with this simple and effective tool. 
+
+A **Typescript-React** app, A _FreeCodeCamp_ challenge.
 
 Status: Deployed. [view live web app](https://moharamfatema.github.io/pomodoro/)
 
